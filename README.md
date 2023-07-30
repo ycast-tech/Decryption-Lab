@@ -41,14 +41,13 @@ In this task, you need to find a hidden file in your home directory and decrypt 
 ```
 cd caesar
 ```
-<img src="images/cdceasar.png" width=500>
 
 2. Use the `ls -a` command to list all files, including hidden files, in your home directory.<br>
 This will display the following output:
 ```ruby
 .  ..  .leftShift3
 ```
-<img src="images/lsa.png" width=500>
+<img src="images/cdceasar.png" width=500>
 
 
 Hidden files in Linux can be identified by their name starting with a period (.).
