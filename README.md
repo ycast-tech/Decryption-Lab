@@ -30,7 +30,7 @@ The message in the `README.txt` file advises that the caesar subdirectory contai
 In the next task, you’ll need to find the hidden file and solve the Caesar cipher that protects it. The file contains instructions on how to recover your data.
 
 #### Check your progress
-<img src="images/code1.png" width=600>
+<img src="images/code1.png" width=800>
 
 
 ## Task 2. Find a hidden file
@@ -47,13 +47,13 @@ This will display the following output:
 ```ruby
 .  ..  .leftShift3
 ```
-<img src="images/cdceasar.png" width=500>
+<img src="images/cdcaesar.png" width=400>
 
 
 Hidden files in Linux can be identified by their name starting with a period (.).
 
 3. Use the cat command to list the contents of the `.leftShift3` file.
-<img src="images/encrypted.png" width=500>
+<img src="images/encrypted.png" width=600>
 
 The message in the `.leftShift3` file appears to be scrambled. This is because the data has been encrypted using a Caesar cipher. This cipher can be solved by shifting each alphabet character to the left or right by a fixed number of spaces. In this example, the shift is three letters to the left. Thus "d" stands for "a", and "e" stands for "b".
 
@@ -61,7 +61,7 @@ The message in the `.leftShift3` file appears to be scrambled. This is because t
 ```sql
 cat .leftShift3 | tr "d-za-cD-ZA-C" "a-zA-Z"
 ```
-<img src="images/catleft3.png" width=500>
+<img src="images/catleft3.png" width=700>
 
 **Note:** The `tr` command translates text from one set of characters to another, using a mapping. The first parameter to the `tr` command represents the input set of characters, and the second represents the output set of characters. Hence, if you provide parameters “abcd” and “pqrs”, and the input string to the `tr` command is “ac”, the output string will be “pr".
 
@@ -82,7 +82,7 @@ Now that you have solved the Caesar cipher, in this task you need to use the com
 ```
 openssl aes-256-cbc -pbkdf2 -a -d -in Q1.encrypted -out Q1.recovered -k ettubrute
 ```
-<img src="images/openssl.png" width=500>
+<img src="images/openssl.png" width=700>
 
 Although you don't need to memorize this command, to help you better understand the syntax used, let's break it down.
 
@@ -94,7 +94,7 @@ The new file `Q1.recovered` in the directory listing is the decrypted file and c
 
 3. Use the `cat` command to list the contents of the `Q1.recovered` file.
 
-<img src="images/recovered.png" width=500>
+<img src="images/recovered.png" width=750>
 
 
 ## Conclusion
