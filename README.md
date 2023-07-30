@@ -62,7 +62,7 @@ The message in the `.leftShift3` file appears to be scrambled. This is because t
 ```sql
 cat .leftShift3 | tr "d-za-cD-ZA-C" "a-zA-Z"
 ```
-
+<img src="images/catleft3.png" width=500>
 
 **Note:** The `tr` command translates text from one set of characters to another, using a mapping. The first parameter to the `tr` command represents the input set of characters, and the second represents the output set of characters. Hence, if you provide parameters “abcd” and “pqrs”, and the input string to the `tr` command is “ac”, the output string will be “pr".
 
@@ -77,10 +77,35 @@ cd ~
 
 ## Task 3. Decrypt a file
 
+Now that you have solved the Caesar cipher, in this task you need to use the command revealed in `.leftshift3` to decrypt a file and recover your data so you can read the message it contains.
+
+1. Use the exact command revealed in the previous task to decrypt the encrypted file:
+```
+openssl aes-256-cbc -pbkdf2 -a -d -in Q1.encrypted -out Q1.recovered -k ettubrute
+```
+<img src="images/openssl.png" width=500>
+
+Although you don't need to memorize this command, to help you better understand the syntax used, let's break it down.
+
+In this instance, the `openssl` command reverses the encryption of the file with a secure symmetric cipher, as indicated by `AES-256-CBC`. The `-pbkdf2` option is used to add extra security to the key, and `-a` indicates the desired encoding for the output. The `-d` indicates decrypting, while `-in` specifies the input file and `-out` specifies the output file. The `-k` specifies the password, which in this example is `ettubrute`.
+
+2. Use the `ls` command to list the contents of your current working directory again.
+
+The new file `Q1.recovered` in the directory listing is the decrypted file and contains a message.
+
+3. Use the `cat` command to list the contents of the `Q1.recovered` file.
+
+<img src="images/recovered.png" width=500>
 
 
-## 
+## Conclusion
+
+I went through this lab to acquire experience and demosntrate that I now have practical experience in using basic Linux Bash shell commands to:
+
+- list hidden files,
+- decrypt a Caesar cipher, and
+- decrypt an encrypted file.
+
+This is an important milestone on my journey towards understanding encryption and decryption.
 
 
-
-## 
